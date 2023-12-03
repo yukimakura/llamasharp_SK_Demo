@@ -36,10 +36,11 @@ namespace LLamaSK
             var txtcmp = new LLamaSharpTextCompletion(ex);
             var builder = new KernelBuilder();
             builder.WithAIService<ITextCompletion>("local-llama", txtcmp, true);
-            // builder.WithAIService<ITextEmbeddingGeneration>("local-llama-embed", new LLamaSharpEmbeddingGeneration(embedding), true);
+
             var kernel = builder.Build();
             kernel.ImportFunctions(new Plugins.WhetherPlugin.Whether(), "WhetherPlugin");
             kernel.ImportFunctions(new Plugins.RotateMotorPlugin.RotateMotor(), "RotateMotorPlugin");
+            kernel.ImportFunctions(new Plugins.NewsPlugin.News(), "NewsPlugin");
             var seqpl = new SequentialPlanner(kernel);
 
             while (true)
@@ -62,10 +63,7 @@ namespace LLamaSK
                         var result = await kernel.RunAsync(s);
 
                         Console.WriteLine("Plan results:");
-                        // foreach (var fr in result.FunctionResults)
-                        // {
                         Console.WriteLine(result);
-                        // }
                     }
                 }
                 catch (SKException skex)
