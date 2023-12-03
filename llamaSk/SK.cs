@@ -18,21 +18,14 @@ namespace LLamaSK
 {
     public class SK
     {
-        public async Task RunAsync()
+        public async Task RunAsync(string modelPath)
         {
-            // Console.Write("Please Runinput your model path: ");
-            // var modelPath = Console.ReadLine();
-            LLama.Native.NativeLibraryConfig.Instance.WithCuda(true);
-            // LLama.Native.NativeLibraryConfig.Instance.WithLibrary("/ws/llamaSK/buildforlib/libllama.so");
-            // LLama.Native.NativeLibraryConfig.Instance.WithLibrary("/home/yukimakura/llamacppdocker/llama.cpp/buildforlib/libllama.so");
-            var modelPath = @"/ws/models/xwin-lm-13b-v0.2.Q3_K_S.gguf";
-            // var modelPath = @"/home/yukimakura/llamacppdocker/llama.cpp/models/xwincoder-13b.Q3_K_S.gguf";
             var t = NativeApi.llama_max_devices();
             // Load weights into memory
             var @params = new ModelParams(modelPath)
             {
                 // MainGpu = 0,
-                GpuLayerCount = 41,
+                GpuLayerCount = 42,
                 ContextSize = 2048,
                 Encoding = System.Text.Encoding.UTF8
             };
@@ -48,11 +41,6 @@ namespace LLamaSK
             kernel.ImportFunctions(new Plugins.WhetherPlugin.Whether(), "WhetherPlugin");
             kernel.ImportFunctions(new Plugins.RotateMotorPlugin.RotateMotor(), "RotateMotorPlugin");
             var seqpl = new SequentialPlanner(kernel);
-
-
-            // var ask = "Tell me the weather in Toyama Prefecture.";
-            // var ask = "富山県の天気を教えてから、右側のモーターを回して。";
-            // var ask = "右側のモーターを回してから、富山県の天気を教えて。";
 
             while (true)
             {
@@ -94,12 +82,11 @@ namespace LLamaSK
         {
             var inferenceParams = new InferenceParams
             {
-                Temperature = 0.01f,
+                Temperature = 0.3f,
                 AntiPrompts = new List<string> { "アトリ:", "User:" },
-                MaxTokens = 512,
+                MaxTokens = 2048,
                 Mirostat = MirostatType.Mirostat2,
                 MirostatTau = 10,
-                // TopP = 
             };
 
             Console.ForegroundColor = ConsoleColor.White;

@@ -5,43 +5,18 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "llamaSk", "llamaSk\llamaSk.csproj", "{DB83DCA5-F044-4FB5-AAA6-EC94DC859525}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LLamaSharp", "LLamaSharp", "{170B471C-FF59-4442-B215-5189D33C2609}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLamaSharp", "LLamaSharp\LLama\LLamaSharp.csproj", "{526EBD4A-035F-40A6-87DA-36E8973B1FE3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLamaSharp.KernelMemory", "LLamaSharp\LLama.KernelMemory\LLamaSharp.KernelMemory.csproj", "{7C4A7D71-389D-4918-8800-07596E75BC4D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLamaSharp.SemanticKernel", "LLamaSharp\LLama.SemanticKernel\LLamaSharp.SemanticKernel.csproj", "{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DB83DCA5-F044-4FB5-AAA6-EC94DC859525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DB83DCA5-F044-4FB5-AAA6-EC94DC859525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB83DCA5-F044-4FB5-AAA6-EC94DC859525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB83DCA5-F044-4FB5-AAA6-EC94DC859525}.Release|Any CPU.Build.0 = Release|Any CPU
-		{526EBD4A-035F-40A6-87DA-36E8973B1FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{526EBD4A-035F-40A6-87DA-36E8973B1FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{526EBD4A-035F-40A6-87DA-36E8973B1FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{526EBD4A-035F-40A6-87DA-36E8973B1FE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C4A7D71-389D-4918-8800-07596E75BC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C4A7D71-389D-4918-8800-07596E75BC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C4A7D71-389D-4918-8800-07596E75BC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C4A7D71-389D-4918-8800-07596E75BC4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{526EBD4A-035F-40A6-87DA-36E8973B1FE3} = {170B471C-FF59-4442-B215-5189D33C2609}
-		{7C4A7D71-389D-4918-8800-07596E75BC4D} = {170B471C-FF59-4442-B215-5189D33C2609}
-		{1DEF01D9-0A19-443E-BBBE-31A93DE6A5CC} = {170B471C-FF59-4442-B215-5189D33C2609}
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
